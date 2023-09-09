@@ -3,6 +3,9 @@ const joinGroupConfirmBlock = document.getElementById("join-group-confirm");
 const joinGroupNotMemBlock = document.getElementById(
   "join-group-not-new-member"
 );
+const joinGroupSuccess = document.getElementById(
+  "join-group-success"
+);
 const joinGroupIsJoinBlock = document.getElementById(
   "join-group-is-join"
 );
@@ -18,6 +21,7 @@ const onClickJoinGroup = () => {
   hiddenBySelector(joinGroupConfirmBlock);
   hiddenBySelector(joinGroupNotMemBlock);
   hiddenBySelector(joinGroupIsJoinBlock);
+  hiddenBySelector(joinGroupSuccess);
 };
 
 const onClickJoin = () => {
@@ -27,7 +31,7 @@ const onClickJoin = () => {
 
 const onClickNotNewMember = () => {
   hiddenBySelector(joinGroupConfirmBlock);
-  blockBySelector(joinGroupNotMemBlock);
+  blockBySelector(joinGroupSuccess);
 };
 
 const onClickOpenIsJoin = ()=>{

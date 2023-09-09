@@ -6,6 +6,7 @@ const newSuccess = document.getElementById("new-success");
 
 const duplicate = document.getElementById("fail-duplicate");
 const repeat = document.getElementById("fail-repeat");
+
 const hiddenBySelector = (seletor) => {
   seletor.classList.add("hidden");
   seletor.classList.remove("block");
