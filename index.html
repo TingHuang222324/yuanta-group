@@ -251,378 +251,378 @@
               確認身分
             </button>
           </div>
-
           <!-- 我要創團popup -->
-          <dialog id="create_group" class="modal sm:modal-middle">
-            <div class="py-1 modal-box">
-              <form method="dialog">
-                <button
-                  class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2"
+
+   <dialog id="create_group" class="modal sm:modal-middle">
+    <div class="py-1 modal-box">
+      <form method="dialog">
+        <button
+          class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2"
+        >
+          <img src="assets/images/modal-close.svg" />
+        </button>
+      </form>
+      <h3 class="text-[28px] font-bold text-center text-blue">
+        ・我要創團・
+      </h3>
+      <div class="p-1 py-6 md:p-10 modal-body">
+        <div id="create-group-step1">
+          <p class="text-[18px] font-bold mb-2">請輸入驗證密碼</p>
+          <div class="input-from">
+            <label class="!pe-2">手機號碼</label>
+            <input id="create-group-phone" type="text" />
+          </div>
+
+          <div class="input-from">
+            <label class="!pe-2" for="">OTP驗證</label>
+            <input class="" id="create-group-otp" type="text" />
+          </div>
+
+          <p class="pt-10 text-sm font-bold">
+            為確保交易安全，請於<strong class="text-red-500"
+              >2分54秒</strong
+            >內輸入OTP驗證密碼(6碼)，逾時未輸入密碼將失效，當您輸入密碼按下「確認」，即表示已充分瞭解並同意本活動內容及注意事項
+          </p>
+
+          <strong class="pt-5 text-sm font-bold text-red-500"
+            >若您未收到驗證碼，請來電客服查詢</strong
+          >
+
+          <button
+            type="button"
+            onclick="onClickOldSuccess()"
+            class="yuanta-btn"
+          >
+            確認(舊戶成功)
+          </button>
+          <button
+            type="button"
+            onclick="onClickNewSuccess()"
+            class="yuanta-btn"
+          >
+            確認(新戶成功)
+          </button>
+          <button
+            type="button"
+            onclick="onClickFailDuplicate()"
+            class="yuanta-btn"
+          >
+            確認(代號重複)
+          </button>
+          <button
+            type="button"
+            onclick="onClickFailRepeat()"
+            class="yuanta-btn"
+          >
+            確認(代號已組團)
+          </button>
+        </div>
+
+        <div id="create-group-success">
+          <img
+            src="assets/images/success.svg"
+            alt="揪團成功"
+            class="mx-auto"
+          />
+          <div class="text-[32px] font-bold text-gray-300 text-center">
+            揪團成功！
+          </div>
+          <div id="old-success">
+            <div class="py-2 text-sm font-bold leading-5">
+              揪團代碼<strong class="text-red-500">XXXX</strong
+              >申請通過，團長需立即分享連結，揪團迎新最高10%無上限
+              推薦連結=活動頁連結.<strong class="text-red-500"
+                >XXXXX</strong
+              >
+
+              <div
+                class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
+              >
+                <label class="font-bold text-[18px] py-1.5 pe-3" for=""
+                  >活動連結</label
                 >
-                  <img src="assets/images/modal-close.svg" />
-                </button>
-              </form>
-              <h3 class="text-[28px] font-bold text-center text-blue">
-                ・我要創團・
-              </h3>
-              <div class="p-1 py-6 md:p-10 modal-body">
-                <div id="create-group-step1">
-                  <p class="text-[18px] font-bold mb-2">請輸入驗證密碼</p>
-                  <div class="input-from">
-                    <label class="!pe-2">手機號碼</label>
-                    <input id="create-group-phone" type="text" />
-                  </div>
-
-                  <div class="input-from">
-                    <label class="!pe-2" for="">OTP驗證</label>
-                    <input class="" id="create-group-otp" type="text" />
-                  </div>
-
-                  <p class="pt-10 text-sm font-bold">
-                    為確保交易安全，請於<strong class="text-red-500"
-                      >2分54秒</strong
-                    >內輸入OTP驗證密碼(6碼)，逾時未輸入密碼將失效，當您輸入密碼按下「確認」，即表示已充分瞭解並同意本活動內容及注意事項
-                  </p>
-
-                  <strong class="pt-5 text-sm font-bold text-red-500"
-                    >若您未收到驗證碼，請來電客服查詢</strong
-                  >
-
-                  <button
-                    type="button"
-                    onclick="onClickOldSuccess()"
-                    class="yuanta-btn"
-                  >
-                    確認(舊戶成功)
-                  </button>
-                  <button
-                    type="button"
-                    onclick="onClickNewSuccess()"
-                    class="yuanta-btn"
-                  >
-                    確認(新戶成功)
-                  </button>
-                  <button
-                    type="button"
-                    onclick="onClickFailDuplicate()"
-                    class="yuanta-btn"
-                  >
-                    確認(代號重複)
-                  </button>
-                  <button
-                    type="button"
-                    onclick="onClickFailRepeat()"
-                    class="yuanta-btn"
-                  >
-                    確認(代號已組團)
-                  </button>
-                </div>
-
-                <div id="create-group-success">
-                  <img
-                    src="assets/images/success.svg"
-                    alt="揪團成功"
-                    class="mx-auto"
+                <div
+                  class="border border-gray-400 rounded shadow w-[288px] relative"
+                >
+                  <input
+                    id="activities-links"
+                    type="text"
+                    class="w-full border-none outline-none ring-0 pr-[15%]"
+                    placeholder="http://123445667.xxx"
                   />
-                  <div class="text-[32px] font-bold text-gray-300 text-center">
-                    揪團成功！
-                  </div>
-                  <div id="old-success">
-                    <div class="py-2 text-sm font-bold leading-5">
-                      揪團代碼<strong class="text-red-500">XXXX</strong
-                      >申請通過，團長需立即分享連結，揪團迎新最高10%無上限
-                      推薦連結=活動頁連結.<strong class="text-red-500"
-                        >XXXXX</strong
-                      >
-
-                      <div
-                        class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
-                      >
-                        <label class="font-bold text-[18px] py-1.5 pe-3" for=""
-                          >活動連結</label
-                        >
-                        <div
-                          class="border border-gray-400 rounded shadow w-[288px] relative"
-                        >
-                          <input
-                            id="activities-links"
-                            type="text"
-                            class="w-full border-none outline-none ring-0 pr-[15%]"
-                            placeholder="http://123445667.xxx"
-                          />
-                          <img
-                            src="assets/images/copy.svg"
-                            class="absolute top-[20%] right-[5%] cursor-pointer"
-                          />
-                        </div>
-                      </div>
-                      <button type="button" class="yuanta-btn">
-                        複製活動連結
-                      </button>
-                    </div>
-                  </div>
-
-                  <div id="new-success">
-                    <div class="py-2 text-sm font-bold leading-5">
-                      揪團代碼<strong class="text-red-500">XXXX</strong
-                      >申請通過，團長需立即透過連結辦卡，揪團迎新最高10%無上限
-                    </div>
-
-                    <div
-                      class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
-                    >
-                      <label class="font-bold text-[18px] py-1.5 pe-3" for=""
-                        >立即辦卡</label
-                      >
-                      <div
-                        class="border border-gray-400 rounded shadow w-[288px] relative"
-                      >
-                        <input
-                          id="activities-links"
-                          type="text"
-                          class="w-full border-none outline-none ring-0 pr-[15%]"
-                          placeholder="http://123445667.xxx"
-                        />
-                        <img
-                          src="assets/images/copy.svg"
-                          class="absolute top-[20%] right-[5%] cursor-pointer"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
-                    >
-                      <label class="font-bold text-[18px] py-1.5 pe-3" for=""
-                        >活動連結</label
-                      >
-                      <div
-                        class="border border-gray-400 rounded shadow w-[288px] relative"
-                      >
-                        <input
-                          id="activities-links"
-                          type="text"
-                          class="w-full border-none outline-none ring-0 pr-[15%]"
-                          placeholder="http://123445667.xxx"
-                        />
-                        <img
-                          src="assets/images/copy.svg"
-                          class="absolute top-[20%] right-[5%] cursor-pointer"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="create-group-fail">
                   <img
-                    src="assets/images/fail.svg"
-                    alt="揪團失敗"
-                    class="mx-auto"
+                    src="assets/images/copy.svg"
+                    class="absolute top-[20%] right-[5%] cursor-pointer"
                   />
-
-                  <div
-                    class="text-[24px] md:text-[32px] font-bold text-gray-300 text-center"
-                    id="fail-duplicate"
-                  >
-                    揪團未完成!<br />
-                    此代號已被他人使用
-                  </div>
-                  <div id="fail-repeat">
-                    <div
-                      class="text-[24] md:text-[32px] font-bold text-gray-300 text-center"
-                    >
-                      您已組團<br />
-                      請至【我要查詢】確認。
-                    </div>
-                    <form method="dialog">
-                      <button onclick="goSearchBlock()" class="yuanta-btn">
-                        我要查詢
-                      </button>
-                    </form>
-                  </div>
                 </div>
               </div>
+              <button type="button" class="yuanta-btn">
+                複製活動連結
+              </button>
             </div>
-            <form method="dialog" class="modal-backdrop">
-              <button>close</button>
+          </div>
+
+          <div id="new-success">
+            <div class="py-2 text-sm font-bold leading-5">
+              揪團代碼<strong class="text-red-500">XXXX</strong
+              >申請通過，團長需立即透過連結辦卡，揪團迎新最高10%無上限
+            </div>
+
+            <div
+              class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
+            >
+              <label class="font-bold text-[18px] py-1.5 pe-3" for=""
+                >立即辦卡</label
+              >
+              <div
+                class="border border-gray-400 rounded shadow w-[288px] relative"
+              >
+                <input
+                  id="activities-links"
+                  type="text"
+                  class="w-full border-none outline-none ring-0 pr-[15%]"
+                  placeholder="http://123445667.xxx"
+                />
+                <img
+                  src="assets/images/copy.svg"
+                  class="absolute top-[20%] right-[5%] cursor-pointer"
+                />
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
+            >
+              <label class="font-bold text-[18px] py-1.5 pe-3" for=""
+                >活動連結</label
+              >
+              <div
+                class="border border-gray-400 rounded shadow w-[288px] relative"
+              >
+                <input
+                  id="activities-links"
+                  type="text"
+                  class="w-full border-none outline-none ring-0 pr-[15%]"
+                  placeholder="http://123445667.xxx"
+                />
+                <img
+                  src="assets/images/copy.svg"
+                  class="absolute top-[20%] right-[5%] cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="create-group-fail">
+          <img
+            src="assets/images/fail.svg"
+            alt="揪團失敗"
+            class="mx-auto"
+          />
+
+          <div
+            class="text-[24px] md:text-[32px] font-bold text-gray-300 text-center"
+            id="fail-duplicate"
+          >
+            揪團未完成!<br />
+            此代號已被他人使用
+          </div>
+          <div id="fail-repeat">
+            <div
+              class="text-[24] md:text-[32px] font-bold text-gray-300 text-center"
+            >
+              您已組團<br />
+              請至【我要查詢】確認。
+            </div>
+            <form method="dialog">
+              <button onclick="goSearchBlock()" class="yuanta-btn">
+                我要查詢
+              </button>
             </form>
-          </dialog>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
 
           <!-- 我要入團popup -->
-          <dialog id="join_group" class="modal sm:modal-middle">
-            <div class="py-1 modal-box">
-              <form method="dialog">
-                <button
-                  class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2"
-                >
-                  <img src="assets/images/modal-close.svg" />
-                </button>
-              </form>
-              <h3 class="text-[28px] font-bold text-center text-blue">
-                ・我要入團・
-              </h3>
-              <div class="p-1 py-6 md:p-10 modal-body">
-                <div id="join-group-step1">
-                  <p class="text-[18px] font-bold mb-2">請輸入驗證密碼</p>
-                  <div class="input-from">
-                    <label class="!pe-2" for="">手機號碼</label>
-                    <input id="join-group-phone" type="text" />
-                  </div>
+<dialog id="join_group" class="modal sm:modal-middle">
+    <div class="py-1 modal-box">
+      <form method="dialog">
+        <button
+          class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2"
+        >
+          <img src="assets/images/modal-close.svg" />
+        </button>
+      </form>
+      <h3 class="text-[28px] font-bold text-center text-blue">
+        ・我要入團・
+      </h3>
+      <div class="p-1 py-6 md:p-10 modal-body">
+        <div id="join-group-step1">
+          <p class="text-[18px] font-bold mb-2">請輸入驗證密碼</p>
+          <div class="input-from">
+            <label class="!pe-2" for="">手機號碼</label>
+            <input id="join-group-phone" type="text" />
+          </div>
 
-                  <div class="input-from">
-                    <label class="!pe-2" for="">OTP驗證</label>
-                    <input class="" id="join-group-otp" type="text" />
-                  </div>
+          <div class="input-from">
+            <label class="!pe-2" for="">OTP驗證</label>
+            <input class="" id="join-group-otp" type="text" />
+          </div>
 
-                  <p class="pt-10 text-sm font-bold">
-                    為確保交易安全，請於<strong class="text-red-500"
-                      >2分54秒</strong
-                    >內輸入OTP驗證密碼(6碼)，逾時未輸入密碼將失效，當您輸入密碼按下「確認」，即表示已充分瞭解並同意本活動內容及注意事項
-                  </p>
+          <p class="pt-10 text-sm font-bold">
+            為確保交易安全，請於<strong class="text-red-500"
+              >2分54秒</strong
+            >內輸入OTP驗證密碼(6碼)，逾時未輸入密碼將失效，當您輸入密碼按下「確認」，即表示已充分瞭解並同意本活動內容及注意事項
+          </p>
 
-                  <strong class="pt-5 text-sm font-bold text-red-500"
-                    >若您未收到驗證碼，請來電客服查詢</strong
-                  >
+          <strong class="pt-5 text-sm font-bold text-red-500"
+            >若您未收到驗證碼，請來電客服查詢</strong
+          >
 
-                  <button
-                    type="button"
-                    onclick="onClickJoin()"
-                    class="yuanta-btn"
-                  >
-                    確認
-                  </button>
-                </div>
+          <button
+            type="button"
+            onclick="onClickJoin()"
+            class="yuanta-btn"
+          >
+            確認
+          </button>
+        </div>
 
-                <div id="join-group-confirm">
-                  <img
-                    src="assets/images/join.svg"
-                    alt="確認入團"
-                    class="mx-auto"
-                  />
-                  <div class="text-[32px] font-bold text-gray-300 text-center">
-                    確認加入此團隊嗎?
-                  </div>
-                  <div class="py-10 text-2xl font-bold text-center">
-                    團主為<strong class="text-red-500">元Ｘ大</strong>
-                  </div>
-                  <div class="flex flex-wrap justify-center md:flex-nowrap">
-                    <!-- 關閉 <form method="dialog"> -->
-                    <button
-                      onclick="onClickNotNewMember()"
-                      class="yuanta-btn me-2 !w-[218px] border border-blue text-blue bg-white"
-                    >
-                      否,重新輸入揪團代碼
-                    </button>
-                    <!-- </form> -->
-                    <button
-                      class="yuanta-btn !min-w-[218px]"
-                      onclick="onClickNotNewMember()"
-                    >
-                      是，確定入團
-                    </button>
-                  </div>
-                </div>
+        <div id="join-group-confirm">
+          <img
+            src="assets/images/join.svg"
+            alt="確認入團"
+            class="mx-auto"
+          />
+          <div class="text-[32px] font-bold text-gray-300 text-center">
+            確認加入此團隊嗎?
+          </div>
+          <div class="py-10 text-2xl font-bold text-center">
+            團主為<strong class="text-red-500">元Ｘ大</strong>
+          </div>
+          <div class="flex flex-wrap justify-center md:flex-nowrap">
+            <!-- 關閉 <form method="dialog"> -->
+            <button
+              onclick="onClickNotNewMember()"
+              class="yuanta-btn me-2 !w-[218px] border border-blue text-blue bg-white"
+            >
+              否,重新輸入揪團代碼
+            </button>
+            <!-- </form> -->
+            <button
+              class="yuanta-btn !min-w-[218px]"
+              onclick="onClickNotNewMember()"
+            >
+              是，確定入團
+            </button>
+          </div>
+        </div>
 
-                <div id="join-group-success">
-                  <img
-                    src="assets/images/success.svg"
-                    alt="入團成功"
-                    class="mx-auto"
-                  />
-                  <div class="text-[32px] font-bold text-gray-300 text-center">
-                    入團成功！
-                  </div>
-                  <div class="py-4 text-sm font-bold leading-5">
-                    成功加入揪團代碼<strong class="text-red-500">xxxx</strong
-                    ><br />
-                    立即辦卡，揪團迎新最高4％無上限
-                  </div>
+        <div id="join-group-success">
+          <img
+            src="assets/images/success.svg"
+            alt="入團成功"
+            class="mx-auto"
+          />
+          <div class="text-[32px] font-bold text-gray-300 text-center">
+            入團成功！
+          </div>
+          <div class="py-4 text-sm font-bold leading-5">
+            成功加入揪團代碼<strong class="text-red-500">xxxx</strong
+            ><br />
+            立即辦卡，揪團迎新最高4％無上限
+          </div>
 
-                  <div
-                    class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
-                  >
-                    <label class="font-bold text-[18px] py-1.5 pe-3" for=""
-                      >立即辦卡</label
-                    >
-                    <div
-                      class="border border-gray-400 rounded shadow w-[288px] relative"
-                    >
-                      <input
-                        id="activities-links"
-                        type="text"
-                        class="w-full border-none outline-none ring-0 pr-[15%]"
-                        placeholder="http://123445667.xxx"
-                      />
-                      <img
-                        src="assets/images/copy.svg"
-                        class="absolute top-[20%] right-[5%] cursor-pointer"
-                      />
-                    </div>
-                  </div>
-
-                  <div
-                    class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
-                  >
-                    <label class="font-bold text-[18px] py-1.5 pe-3" for=""
-                      >活動連結</label
-                    >
-                    <div
-                      class="border border-gray-400 rounded shadow w-[288px] relative"
-                    >
-                      <input
-                        id="activities-links"
-                        type="text"
-                        class="w-full border-none outline-none ring-0 pr-[15%]"
-                        placeholder="http://123445667.xxx"
-                      />
-                      <img
-                        src="assets/images/copy.svg"
-                        class="absolute top-[20%] right-[5%] cursor-pointer"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div id="join-group-not-new-member">
-                  <img
-                    src="assets/images/fail.svg"
-                    alt="入團失敗"
-                    class="mx-auto"
-                  />
-
-                  <div class="text-[32px] font-bold text-gray-300 text-center">
-                    團員限信用卡新戶參加，<br />
-                    請建立揪團代碼成為團主，<br />
-                    邀請好友入團辦卡享回饋！<br />
-                  </div>
-                  <!-- <form method="dialog"> -->
-                  <button class="yuanta-btn" onclick="onClickOpenIsJoin()">
-                    我要入團
-                  </button>
-                  <!-- </form> -->
-                </div>
-
-                <div id="join-group-is-join">
-                  <img
-                    src="assets/images/fail.svg"
-                    alt="入團失敗"
-                    class="mx-auto"
-                  />
-
-                  <div class="text-[32px] font-bold text-gray-300 text-center">
-                    您已入團<br />
-                    請至【我要查詢】確認。
-                  </div>
-                  <form method="dialog">
-                    <button class="yuanta-btn">我要查詢</button>
-                  </form>
-                </div>
-              </div>
+          <div
+            class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
+          >
+            <label class="font-bold text-[18px] py-1.5 pe-3" for=""
+              >立即辦卡</label
+            >
+            <div
+              class="border border-gray-400 rounded shadow w-[288px] relative"
+            >
+              <input
+                id="activities-links"
+                type="text"
+                class="w-full border-none outline-none ring-0 pr-[15%]"
+                placeholder="http://123445667.xxx"
+              />
+              <img
+                src="assets/images/copy.svg"
+                class="absolute top-[20%] right-[5%] cursor-pointer"
+              />
             </div>
-            <form method="dialog" class="modal-backdrop">
-              <button>close</button>
-            </form>
-          </dialog>
+          </div>
+
+          <div
+            class="flex flex-col items-start justify-start mb-3 md:items-center md:flex-row"
+          >
+            <label class="font-bold text-[18px] py-1.5 pe-3" for=""
+              >活動連結</label
+            >
+            <div
+              class="border border-gray-400 rounded shadow w-[288px] relative"
+            >
+              <input
+                id="activities-links"
+                type="text"
+                class="w-full border-none outline-none ring-0 pr-[15%]"
+                placeholder="http://123445667.xxx"
+              />
+              <img
+                src="assets/images/copy.svg"
+                class="absolute top-[20%] right-[5%] cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="join-group-not-new-member">
+          <img
+            src="assets/images/fail.svg"
+            alt="入團失敗"
+            class="mx-auto"
+          />
+
+          <div class="text-[32px] font-bold text-gray-300 text-center">
+            團員限信用卡新戶參加，<br />
+            請建立揪團代碼成為團主，<br />
+            邀請好友入團辦卡享回饋！<br />
+          </div>
+          <!-- <form method="dialog"> -->
+          <button class="yuanta-btn" onclick="onClickOpenIsJoin()">
+            我要入團
+          </button>
+          <!-- </form> -->
+        </div>
+
+        <div id="join-group-is-join">
+          <img
+            src="assets/images/fail.svg"
+            alt="入團失敗"
+            class="mx-auto"
+          />
+
+          <div class="text-[32px] font-bold text-gray-300 text-center">
+            您已入團<br />
+            請至【我要查詢】確認。
+          </div>
+          <form method="dialog">
+            <button class="yuanta-btn">我要查詢</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
 
           <div class="w-full md:w-[50%] cutting_line">請創立揪團代碼</div>
 
@@ -696,88 +696,88 @@
             手刀查詢
           </button>
         </div>
-
-        <dialog id="search_group" class="modal sm:modal-middle">
-          <div class="py-1 modal-box">
-            <form method="dialog">
-              <button
-                class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2"
-              >
-                <img src="assets/images/modal-close.svg" />
-              </button>
-            </form>
-            <h3 class="text-[28px] font-bold text-center text-blue">
-              ・我要查詢・
-            </h3>
-            <div class="p-1 py-6 md:p-10 modal-body">
-              <div id="search-success">
-                <div class="flex items-center justify-center mb-2">
-                  <span
-                    class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
-                    >揪團代碼</span
-                  >
-                  <span
-                    class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
-                    >XXXX</span
-                  >
-                </div>
-                <div class="flex items-center justify-center mb-2">
-                  <span
-                    class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
-                    >截至</span
-                  >
-                  <span
-                    class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
-                    >YYYY/MM/DD</span
-                  >
-                </div>
-                <div class="flex items-center justify-center mb-2">
-                  <span
-                    class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
-                    >人數已累積</span
-                  >
-                  <span
-                    class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
-                    >**,***</span
-                  >
-                </div>
-                <div class="flex items-center justify-center mb-2">
-                  <span
-                    class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
-                    >已核發卡數</span
-                  >
-                  <span
-                    class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
-                    >**,***</span
-                  >
-                </div>
-              </div>
-            </div>
+        <!-- 查詢popup -->
+<dialog id="search_group" class="modal sm:modal-middle">
+    <div class="py-1 modal-box">
+      <form method="dialog">
+        <button
+          class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2"
+        >
+          <img src="assets/images/modal-close.svg" />
+        </button>
+      </form>
+      <h3 class="text-[28px] font-bold text-center text-blue">
+        ・我要查詢・
+      </h3>
+      <div class="p-1 py-6 md:p-10 modal-body">
+        <div id="search-success">
+          <div class="flex items-center justify-center mb-2">
+            <span
+              class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
+              >揪團代碼</span
+            >
+            <span
+              class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
+              >XXXX</span
+            >
           </div>
-          <form method="dialog" class="modal-backdrop">
-            <button>close</button>
-          </form>
-        </dialog>
+          <div class="flex items-center justify-center mb-2">
+            <span
+              class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
+              >截至</span
+            >
+            <span
+              class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
+              >YYYY/MM/DD</span
+            >
+          </div>
+          <div class="flex items-center justify-center mb-2">
+            <span
+              class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
+              >人數已累積</span
+            >
+            <span
+              class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
+              >**,***</span
+            >
+          </div>
+          <div class="flex items-center justify-center mb-2">
+            <span
+              class="w-[120px] border-e-4 pe-4 border-e-[#B2E0FD] text-[#232323] font-bold text-[18px] text-end"
+              >已核發卡數</span
+            >
+            <span
+              class="ml-4 w-[209px] text-center bg-[#EFF6FC] font-bold text-[20px] rounded"
+              >**,***</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
       </div>
     </div>
 
     <!-- creditSlogan start -->
     <div
-      class="flex flex-col items-center justify-center w-full h-auto px-6 py-5 bg-white md:flex-row"
+      class="flex flex-col items-center justify-center w-full h-auto px-6 py-5 font-sans bg-white md:flex-row"
     >
       <div
-        class="flex flex-row md:flex-col lg:flex-row text-[28px] font-bold tracking-wider text-[#575757] border-b border-b-[#666] md:border-b-0 md:border-e md:border-e-[#666] justify-center w-full md:w-auto mb-2 pr-7"
+        class="flex flex-row md:flex-col lg:flex-row text-[28px] font-bold tracking-wider  border-b border-b-[#666] md:border-b-0 md:border-e md:border-e-[#666] justify-center w-full md:w-auto mb-2 pr-7"
       >
         <span class="pr-3">謹慎理財</span><span>信用無價</span>
       </div>
       <div
-        class="pl-0 md:pl-7 text-center md:text-start text-[#575757] text-sm leading-6"
+        class="pl-0 text-sm leading-6 text-center md:pl-7 md:text-start"
       >
         <p><span>信用卡循環信用年利率：</span>2.92%~15.00%(基準日:106/4/1)</p>
         <p><span>預備現金手續費：</span>每筆預借現金金額x3.5%+NT$100</p>
       </div>
       <div
-        class="pl-0 md:pl-7 text-center md:text-start text-[#575757] text-sm leading-6"
+        class="pl-0 text-sm leading-6 text-center md:pl-7 md:text-start"
       >
         <p>
           <span>其他費用請至元大網站：</span
@@ -789,7 +789,7 @@
     </div>
     <!-- creditSlogan end -->
     <footer
-      class="bg-[#007fe0] text-sm py-[10px] pl-[20px] leading-6 text-start md:text-center font-normal"
+      class="bg-[#007fe0] text-sm py-[10px] pl-[20px] leading-6 text-start md:text-center font-normal font-sans"
     >
       Copyright © Yuanta Commercial Bank Co. Ltd. All Rights Reserved.<br />
       <div
