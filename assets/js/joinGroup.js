@@ -3,12 +3,12 @@ const joinGroupConfirmBlock = document.getElementById("join-group-confirm");
 const joinGroupNotMemBlock = document.getElementById(
   "join-group-not-new-member"
 );
-const joinGroupSuccess = document.getElementById(
-  "join-group-success"
-);
-const joinGroupIsJoinBlock = document.getElementById(
-  "join-group-is-join"
-);
+const joinGroupSuccess = document.getElementById("join-group-success");
+const joinGroupIsJoinBlock = document.getElementById("join-group-is-join");
+
+/**
+ * 打開彈窗
+ */
 const onClickJoinGroup = () => {
   join_group.showModal();
 
@@ -24,18 +24,27 @@ const onClickJoinGroup = () => {
   hiddenBySelector(joinGroupSuccess);
 };
 
+/**
+ * 顯示確認入團區塊
+ */
 const onClickJoin = () => {
   hiddenBySelector(joinGroupStep1Block);
   blockBySelector(joinGroupConfirmBlock);
 };
 
+/**
+ * 顯示入團成功區塊
+ */
 const onClickNotNewMember = () => {
   hiddenBySelector(joinGroupConfirmBlock);
   blockBySelector(joinGroupSuccess);
 };
 
-const onClickOpenIsJoin = ()=>{
-    hiddenBySelector(joinGroupConfirmBlock);
-    hiddenBySelector(joinGroupNotMemBlock);
-    blockBySelector(joinGroupIsJoinBlock);
-}
+/**
+ * 顯示您已入團區塊
+ */
+const onClickOpenIsJoin = () => {
+  hiddenBySelector(joinGroupConfirmBlock);
+  hiddenBySelector(joinGroupNotMemBlock);
+  blockBySelector(joinGroupIsJoinBlock);
+};

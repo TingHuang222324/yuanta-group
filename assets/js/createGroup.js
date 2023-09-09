@@ -16,6 +16,10 @@ const blockBySelector = (seletor) => {
   seletor.classList.add("block");
   seletor.classList.remove("hidden");
 };
+
+/** 
+ * 打開彈窗
+ */
 const onClickCreateGroup = () => {
   create_group.showModal();
 
@@ -35,12 +39,14 @@ const hiddenStep1Block = () => {
   groupStep1Block.classList.remove("block");
 };
 
+/** 舊戶糾團成功 */
 const onClickOldSuccess = () => {
   hiddenStep1Block();
   blockBySelector(groupSuccessBlock);
   blockBySelector(oldSuccess);
   hiddenBySelector(newSuccess);
 };
+/** 新戶糾團成功 */
 const onClickNewSuccess = () => {
   hiddenStep1Block();
   blockBySelector(groupSuccessBlock);
@@ -48,12 +54,15 @@ const onClickNewSuccess = () => {
   hiddenBySelector(oldSuccess);
 };
 
+/** 重複代號失敗 */
 const onClickFailDuplicate = () => {
   hiddenStep1Block();
   blockBySelector(groupFailBlock);
   blockBySelector(duplicate);
   hiddenBySelector(repeat);
 };
+
+/** 代號已組團失敗 */
 const onClickFailRepeat = () => {
   hiddenStep1Block();
   blockBySelector(groupFailBlock);

@@ -224,7 +224,13 @@
         <div class="white-content">
           <img
             src="assets/images/tab/people.svg"
-            class="absolute bottom-[-10%] left-[-10%] animate-peopleYl hidden md:block"
+            id="tab-left-people"
+            class="absolute bottom-[-10%] left-[-10%] animate-peopleYl hidden"
+          />
+          <img
+            src="assets/images/tab/people_2.svg"
+            id="tab-right-people"
+            class="absolute bottom-[-10%] right-[-5%] animate-peopleYl hidden"
           />
           <div class="gary-from">
             <div class="input-from">
@@ -775,8 +781,7 @@
       >
         <p>
           <span>其他費用請至元大網站：</span
-          ><a href="yuantabank.com.tw" class="text-blue-500 underline"
-            >yuantabank.com.tw</a
+          ><a href="yuantabank.com.tw" class="underline">yuantabank.com.tw</a
           >查詢
         </p>
         <p><span>24小時客服專線：</span>(02)2182-1968</p>
@@ -784,7 +789,7 @@
     </div>
     <!-- creditSlogan end -->
     <footer
-      class="bg-[#007fe0] text-white text-sm py-[10px] pl-[20px] leading-6 text-start md:text-center font-thin"
+      class="bg-[#007fe0] text-sm py-[10px] pl-[20px] leading-6 text-start md:text-center font-normal"
     >
       Copyright © Yuanta Commercial Bank Co. Ltd. All Rights Reserved.<br />
       <div
@@ -810,6 +815,8 @@
     currentTab = "create";
     document.getElementById("tab1").classList.add("tab-active");
     document.getElementById("tab2").classList.remove("tab-active");
+    document.getElementById("tab-left-people").classList.add("md:block");
+    document.getElementById("tab-right-people").classList.remove("md:block");
     document.getElementsByClassName("cutting_line")[0].innerHTML =
       "請創立揪團代碼";
 
@@ -817,6 +824,8 @@
   };
   const tab2Click = () => {
     currentTab = "join";
+    document.getElementById("tab-right-people").classList.add("md:block");
+    document.getElementById("tab-left-people").classList.remove("md:block");
     document.getElementById("tab2").classList.add("tab-active");
     document.getElementById("tab1").classList.remove("tab-active");
     document.getElementsByClassName("cutting_line")[0].innerHTML =
