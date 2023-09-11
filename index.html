@@ -36,7 +36,15 @@
             alt="揪團迎新召集令"
             data-aos-duration="1000"
             data-aos-delay="500"
-            class="h-full mb-6 w-[95%]"
+            class="h-full mb-6 w-[95%] hidden md:block mx-auto"
+          />
+          <img
+            data-aos="fade-right"
+            src="assets/images/top/top_ttl_1_mobile.svg"
+            alt="揪團迎新召集令"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+            class="h-full mb-6 w-[95%] block md:hidden mx-auto"
           />
           <img
             src="assets/images/top/top_ttl_2.svg"
@@ -44,7 +52,7 @@
             alt="最高10%回饋"
             data-aos-duration="1000"
             data-aos-delay="800"
-            class="h-full w-[95%]"
+            class="h-full w-[80%] md:w-[95%] mx-auto"
           />
         </div>
 
@@ -95,7 +103,10 @@
         <div data-aos="fade-right" class="card">
           <img src="assets/images/step/step1.svg" />
           <div class="card-body">
-            <img src="assets/images/step/step1_group.svg" class="m-auto" />
+            <img
+              src="assets/images/step/step1_group.svg"
+              class="m-auto w-[80%] md:w-[75%] lg:w-auto"
+            />
             <img src="assets/images/step/step1_ttl.svg" class="m-auto" />
           </div>
         </div>
@@ -118,12 +129,16 @@
 
       <img
         src="assets/images/step/rule_table.svg"
-        class="px-2 md:px-[25%] mb-4"
+        class="px-2 md:px-[5%] lg:px-[25%] mb-4 hidden md:block"
+      />
+      <img
+        src="assets/images/step/rule_table_mobile.svg"
+        class="block px-2 mb-4 md:hidden"
       />
       <!-- daisyui collapse start -->
       <details
         tabindex="0"
-        class="md:!w-1/2 mx-auto bg-white border border-orange-500 collapse collapse-plus outline-none rounded-md"
+        class="md:!w-[90%] lg:!w-1/2 mx-auto bg-white border border-orange-500 collapse collapse-plus outline-none rounded-md"
       >
         <summary class="py-6 px-10 text-[22px] font-bold collapse-title">
           注意事項
@@ -225,12 +240,12 @@
           <img
             src="assets/images/tab/people.svg"
             id="tab-left-people"
-            class="absolute bottom-[-10%] left-[-10%] animate-peopleYl hidden"
+            class="tab-left-people"
           />
           <img
             src="assets/images/tab/people_2.svg"
             id="tab-right-people"
-            class="absolute bottom-[-10%] right-[-5%] animate-peopleYl hidden"
+            class="tab-right-people"
           />
           <div class="gary-from">
             <div class="input-from">
@@ -646,17 +661,17 @@
     <div class="search-section" id="search">
       <img
         src="assets/images/search/ttl.svg"
-        class="w-[324.5px] mb-10"
+        class="w-[70%] md:w-[324.5px] mb-10"
         data-aos="zoom-in-up"
       />
       <div class="white-content" data-aos="zoom-in-up">
         <img
           src="assets/images/search/gift.svg "
-          class="absolute bottom-[-2%] left-[-10%] hidden lg:block animate-peopleYl"
+          class="gift"
         />
         <img
           src="assets/images/search/phone-man.svg"
-          class="absolute bottom-[-4%] right-[-6%] hidden lg:block animate-peopleYl"
+          class="phone-man"
         />
         <div class="gary-from">
           <div class="input-from">
@@ -766,19 +781,15 @@
       class="flex flex-col items-center justify-center w-full h-auto px-6 py-5 font-sans bg-white md:flex-row"
     >
       <div
-        class="flex flex-row md:flex-col lg:flex-row text-[28px] font-bold tracking-wider  border-b border-b-[#666] md:border-b-0 md:border-e md:border-e-[#666] justify-center w-full md:w-auto mb-2 pr-7"
+        class="flex flex-row md:flex-col lg:flex-row text-[28px] font-bold tracking-wider border-b border-b-[#666] md:border-b-0 md:border-e md:border-e-[#666] justify-center w-full md:w-auto mb-2 pr-7"
       >
         <span class="pr-3">謹慎理財</span><span>信用無價</span>
       </div>
-      <div
-        class="pl-0 text-sm leading-6 text-center md:pl-7 md:text-start"
-      >
+      <div class="pl-0 text-sm leading-6 text-center md:pl-7 md:text-start">
         <p><span>信用卡循環信用年利率：</span>2.92%~15.00%(基準日:106/4/1)</p>
         <p><span>預備現金手續費：</span>每筆預借現金金額x3.5%+NT$100</p>
       </div>
-      <div
-        class="pl-0 text-sm leading-6 text-center md:pl-7 md:text-start"
-      >
+      <div class="pl-0 text-sm leading-6 text-center md:pl-7 md:text-start">
         <p>
           <span>其他費用請至元大網站：</span
           ><a href="yuantabank.com.tw" class="underline">yuantabank.com.tw</a
@@ -815,8 +826,10 @@
     currentTab = "create";
     document.getElementById("tab1").classList.add("tab-active");
     document.getElementById("tab2").classList.remove("tab-active");
-    document.getElementById("tab-left-people").classList.add("md:block");
-    document.getElementById("tab-right-people").classList.remove("md:block");
+    document.getElementById("tab-left-people").classList.add("block");
+    document.getElementById("tab-left-people").classList.remove("hidden");
+    document.getElementById("tab-right-people").classList.add("hidden");
+    document.getElementById("tab-right-people").classList.remove("block");
     document.getElementsByClassName("cutting_line")[0].innerHTML =
       "請創立揪團代碼";
 
@@ -824,8 +837,10 @@
   };
   const tab2Click = () => {
     currentTab = "join";
-    document.getElementById("tab-right-people").classList.add("md:block");
-    document.getElementById("tab-left-people").classList.remove("md:block");
+    document.getElementById("tab-right-people").classList.add("block");
+    document.getElementById("tab-right-people").classList.remove("hidden");
+    document.getElementById("tab-left-people").classList.remove("block");
+    document.getElementById("tab-left-people").classList.add("hidden");
     document.getElementById("tab2").classList.add("tab-active");
     document.getElementById("tab1").classList.remove("tab-active");
     document.getElementsByClassName("cutting_line")[0].innerHTML =
