@@ -1,11 +1,9 @@
 const groupStep1Block = document.getElementById("create-group-step1");
 const groupSuccessBlock = document.getElementById("create-group-success");
-const groupFailBlock = document.getElementById("create-group-fail");
 const oldSuccess = document.getElementById("old-success");
 const newSuccess = document.getElementById("new-success");
 
-const duplicate = document.getElementById("fail-duplicate");
-const repeat = document.getElementById("fail-repeat");
+
 
 const hiddenBySelector = (seletor) => {
   seletor.classList.add("hidden");
@@ -30,7 +28,6 @@ const onClickCreateGroup = () => {
   groupStep1Block.classList.remove("hidden");
   /** other block hide */
   hiddenBySelector(groupSuccessBlock);
-  hiddenBySelector(groupFailBlock);
 };
 
 const hiddenStep1Block = () => {
@@ -54,22 +51,4 @@ const onClickNewSuccess = () => {
   hiddenBySelector(oldSuccess);
 };
 
-/** 重複代號失敗 */
-const onClickFailDuplicate = () => {
-  hiddenStep1Block();
-  blockBySelector(groupFailBlock);
-  blockBySelector(duplicate);
-  hiddenBySelector(repeat);
-};
 
-/** 代號已組團失敗 */
-const onClickFailRepeat = () => {
-  hiddenStep1Block();
-  blockBySelector(groupFailBlock);
-  blockBySelector(repeat);
-  hiddenBySelector(duplicate);
-};
-
-const goSearchBlock = () => {
-  window.location.hash = "#search";
-};
