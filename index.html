@@ -170,13 +170,17 @@
               >入團(新戶定義為核卡日前6個月內未曾持有本行任何信用卡正卡者)。
             </li>
             <li>
-              回饋機制：本行於活動結束後統計各登錄「揪團代碼」中新戶數，依登錄身分別及揪團新戶數提供適用之回饋率，並以活動期間「一般消費」之刷卡金額計算回饋金基礎。揪團新戶數不滿10人之團隊，其活動期間之消費金額恕無法獲得回饋。
+              回饋機制：本行於活動結束後統計各登錄「揪團代碼」中新戶數，依登錄身分別及揪團新戶數提供適用之回饋率，並以活動期間「一般消費」之刷卡金額計算回饋金基礎。揪團新戶數不滿<strong
+              class="font-bold text-orange-500"
+              >10人</strong>之團隊，其活動期間之消費金額恕無法獲得回饋。
             </li>
             <ol class="leading-7">
               <li>
                 a.揪團新戶數<strong class="font-bold text-orange-500">10</strong
                 >人~<strong class="font-bold text-orange-500">49</strong
-                >人：團主享3%加碼回饋，團員享<strong
+                >人：團主享<strong
+                class="font-bold text-orange-500"
+                >3%</strong>加碼回饋，團員享<strong
                   class="font-bold text-orange-500"
                   >2</strong
                 >%加碼回饋。
@@ -184,7 +188,9 @@
               <li>
                 b.揪團新戶數<strong class="font-bold text-orange-500">50</strong
                 >人~<strong class="font-bold text-orange-500">99</strong
-                >人：團主享5%加碼回饋，團員享<strong
+                >人：團主享<strong
+                class="font-bold text-orange-500"
+                >5%</strong>加碼回饋，團員享<strong
                   class="font-bold text-orange-500"
                   >3</strong
                 >%加碼回饋。
@@ -192,7 +198,9 @@
               <li>
                 c.揪團新戶數<strong class="font-bold text-orange-500"
                   >100</strong
-                >人以上：團主享10%加碼回饋，團員享<strong
+                >人以上：團主享<strong
+                class="font-bold text-orange-500"
+                >10%</strong>加碼回饋，團員享<strong
                   class="font-bold text-orange-500"
                   >4</strong
                 >%加碼回饋。
@@ -597,6 +605,7 @@
       ・我要入團・
     </h3>
     <div class="p-1 py-6 md:p-10 modal-body">
+      <div class="text-red-500">您尚未成為本行客戶，請輸入資料進行設定。</div>
       <div class="input-from">
         <label class="!pe-2 md:w-[120px]"
           ><span class="text-red-500">*</span>身分證字號</label
@@ -624,7 +633,7 @@
             class="checkbox checkbox-sm me-2"
           />
           <span class="text-red-500 label-text"
-            >同意本行將保護您個人資料安全且於法令許可及個人資料保護法告知內容之範圍內，在國內蒐集、處理、利用您的個人資料。詳閱隱私權保護聲明</span
+            >同意本行將保護您個人資料安全且於法令許可及個人資料保護法告知內容之範圍內，在國內蒐集、處理、利用您的個人資料。詳閱<a href='https://www.yuantabank.com.tw/bank/privacy/statement.do' target="_blank" class="underline underline-offset-2">隱私權保護聲明</a></span
           >
         </label>
       </div>
@@ -692,7 +701,7 @@
       
         <div id="fail-repeat">
           <div
-            class="text-[24] md:text-[32px] font-bold text-gray-300 text-center"
+            class="text-[24px] md:text-[32px] font-bold text-gray-300 text-center"
           >
             您已組團<br />
             請至【我要查詢】確認。
@@ -743,7 +752,7 @@
             class="yuanta-btn"
             onclick="search_group.showModal()"
           >
-            確認身分
+            手刀查詢
           </button>
         </div>
         <!-- 查詢popup -->
